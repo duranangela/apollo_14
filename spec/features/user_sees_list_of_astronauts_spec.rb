@@ -22,4 +22,14 @@ describe 'astronauts index' do
 
     expect(page).to have_content(Astronaut.average_age)
   end
+  it 'user sees list of space missions for each astronaut' do
+    astronaut_1 = Astronaut.create(name: 'Neil Armstrong', age: 36, job: 'Commander')
+    astronaut_1.space_missions.create(title: 'Apollo 13', trip_length: 128)
+    astronaut_1.space_missions.create(title: 'Capricorn 4', trip_length: 203)
+
+    visit '/astronauts'
+
+    expect(page).to have_content('Apollo 13')
+    expect(page).to have_content('Capricorn 4')
+  end
 end
