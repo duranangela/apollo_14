@@ -5,6 +5,12 @@
   <% @astronauts.each do |astronaut| %>
     <li><%= astronaut.name %></li>
     <li><%= astronaut.age %></li>
-    <li><%= astronaut.job %></li><br/>
+    <li><%= astronaut.job %></li>
+    <li>Missions
+      <ul>
+      <% astronaut.space_missions.each do |mission| %>
+      <li><%= mission.title %></li>
+      <% end %>
+    </ul></li><br/><br/>
   <% end %>
 </ul>
