@@ -23,7 +23,7 @@ describe Astronaut, type: :model do
       astronaut_1.space_missions.create(title: 'Apollo 13', trip_length: 128)
       astronaut_1.space_missions.create(title: 'Capricorn 4', trip_length: 203)
 
-      expect(Astronaut.total_days).to eq(331)
+      expect(astronaut_1.total_days).to eq(331)
     end
   end
 end
