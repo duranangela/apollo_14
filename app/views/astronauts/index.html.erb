@@ -1,12 +1,12 @@
 <h1>All Astronauts</h1>
-<h2>Average age = <%= @average_age %></h2>
+<h3>Average age = <%= @average_age %></h3>
 
 <ul>
   <% @astronauts.each do |astronaut| %>
-    <li><%= astronaut.name %></li>
-    <li><%= astronaut.age %></li>
-    <li><%= astronaut.job %></li>
-    <li>Missions
+    <li>Name: <%= astronaut.name %></li>
+    <li>Age: <%= astronaut.age %></li>
+    <li>Job: <%= astronaut.job %></li>
+    <li>Missions:
       <ul>
         <% astronaut.space_missions.alpha_order.each do |mission| %>
         <li><%= mission.title %></li>
