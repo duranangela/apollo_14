@@ -8,9 +8,10 @@
     <li><%= astronaut.job %></li>
     <li>Missions
       <ul>
-      <% astronaut.space_missions.each do |mission| %>
-      <li><%= mission.title %></li>
-      <% end %>
-    </ul></li><br/><br/>
+        <% astronaut.space_missions.alpha_order.each do |mission| %>
+        <li><%= mission.title %></li>
+        <% end %>
+      </ul></li>
+    <li>Total days in space: <%= astronaut.total_days %><br/><br/>
   <% end %>
 </ul>
